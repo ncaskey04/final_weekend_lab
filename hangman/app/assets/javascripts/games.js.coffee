@@ -15,8 +15,20 @@ GamesApp.config ['$routeProvider', '$locationProvider', ($routeProvider, $locati
 
 # GamesApp Controller
 GamesApp.controller "GamesCtrl", ["$scope", "$http", ($scope, $http) ->
-  $scope.GamesApp = []
+  # GENERATE LETTER BUTTONS
+  $scope.alphabet = "abcdefghijklmnopqrstuvwxyz".split("")
 
+  $scope.words = []
+
+  $scope.hideButton = (letter) ->
+    this.checked = true
+
+  # CREATE SECRET WORD & SAVE IT TO WORDS ARRAY 
+  $scope.saveWord = ->
+    $http.post('/words.json', $scope.secretWord).success (data) ->
+      $scope.secretWord = {}
+      $scope.words.push(data)
+]
 
 
 

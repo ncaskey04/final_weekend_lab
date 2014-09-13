@@ -1,1 +1,48 @@
-This is the index page
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+<style>
+  .letter {
+    display: inline;
+    float: left;
+    margin: 0 15px 15px 0;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #000000;
+    -moz-border-radius: 5px;
+    -webkit-border-raidus: 5px;
+  }
+
+  div:hover {
+    position: relative;
+    top: 1px;
+    left: 1px;
+    border-color: #e5e5e5;
+    cursor: pointer;
+  }
+
+</style>
+
+<body>
+
+<form action="javascript:void(0);" ng-submit = "saveWord()">
+  <input type="text" ng-model="secretWord" placeholder="enter a word" autofocus required >
+  <button>Save Word</button>
+</form>
+
+<h1>Hangman app</h1>
+
+<ul ng-repeat = "letter in alphabet" ng-model="checked">
+  <div class="letter" ng-click ="hideButton()" ng-hide= "checked">{{letter}}</div>
+</ul>
+
+</body>

@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap.min.js
 //= require angular.min
 //= require angular-route.min
 //= require angular-rails-templates

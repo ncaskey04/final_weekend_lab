@@ -4,19 +4,10 @@ class GamesController < ApplicationController
   respond_to :json, :html
 
   def index
-
   end
 
 
-
-
-
-
-
-
-
   private
-
   def render_main_layout_if_format_html
     # check the request format
     if request.format.symbol == :html
