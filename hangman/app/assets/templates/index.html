@@ -34,15 +34,20 @@
 
 <body>
 
-<form action="javascript:void(0);" ng-submit = "saveWord()">
+<h1>Hangman app</h1>
+
+<form action="javascript:void(0);" ng-submit = "addWord()">
   <input type="text" ng-model="secretWord" placeholder="enter a word" autofocus required >
   <button>Save Word</button>
 </form>
 
-<h1>Hangman app</h1>
 
 <ul ng-repeat = "letter in alphabet" ng-model="checked">
-  <div class="letter" ng-click ="hideButton()" ng-hide= "checked">{{letter}}</div>
+  <div class="letter" ng-click ="hideButton()" ng-hide="checked">{{letter}}</div>
 </ul>
+
+<div>
+  <span display = "inline" ng-repeat ="x in dashes track by $index">{{dashes[$index]}}</span>
+</div>
 
 </body>
